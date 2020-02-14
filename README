@@ -1,0 +1,6 @@
+* `sbt -Dconfig.file=conf/someconf.conf` produces a NoClassDefFound on startup
+* `sbt -Dconfig.file=/someconf.conf` doesn't
+* moving the config to application.conf doesn't
+
+Probably -Dconfig.file adds the config to the configuration of the Play devmode
+actorsystem instead of (or in addition to) the application configuration.
